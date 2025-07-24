@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
 
         clicklines.setOnClickListener{v ->
-            val activity_main2 = layoutInflater.inflate(R.layout.activity_main2,container,false)
+            val activity_main2 = layoutInflater.inflate(R.layout.activity_main2,null)
           pushView(activity_main2)
 
             activity_main2.post{
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             val textlines: TextView = findViewById(R.id.textlines)
 
             textlines.setOnClickListener{v ->
-                val views2 = layoutInflater.inflate(R.layout.activity_sound,container,false)
+                val views2 = layoutInflater.inflate(R.layout.activity_sound,null)
                 pushView(avtivity_sound)
             }
         }
