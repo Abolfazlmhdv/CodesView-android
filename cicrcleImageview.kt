@@ -2,7 +2,6 @@
 
 /*
 //This is the code I assigned for round photos.
- // Build by Abolfazl Mahdavi from company lirogram 
  */
 
 
@@ -30,6 +29,7 @@ class imageviewcircle @JvmOverloads constructor(context: Context,attr: Attribute
         path.reset()
         path.addCircle(x,y,raduis, Path.Direction.CW)
         canvas.clipPath(path)
+        canvas.save()
 
 
         super.onDraw(canvas)
