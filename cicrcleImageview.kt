@@ -1,37 +1,37 @@
+
+
+/*
+//This is the code I assigned for round photos.
+ // Build by Abolfazl Mahdavi from company lirogram 
+ */
+
+
 package com.example.lirogramapps
-
-
 
 import android.content.Context
 import android.graphics.*
+import android.provider.DocumentsContract
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
 
-class CircleImageView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : AppCompatImageView(context, attrs, defStyleAttr) {
+class imageviewcircle @JvmOverloads constructor(context: Context,attr: AttributeSet? = null,defStyleAttr: Int = 0) :
+        AppCompatImageView(context,attr,defStyleAttr)  {
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val path = Path()
+            private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+                private val path = Path()
+
 
     override fun onDraw(canvas: Canvas) {
-        val radius = width.coerceAtMost(height) / 2f
+        val raduis = width.coerceAtMost(height) / 1.5f
 
-        val cx = width / 2f
-        val cy = height / 2f
+        val x = width / 1.5f
+        val y = height  / 1.5f
 
-        // Clip the canvas to a circle path
         path.reset()
-        path.addCircle(cx, cy, radius, Path.Direction.CW)
+        path.addCircle(x,y,raduis, Path.Direction.CW)
         canvas.clipPath(path)
 
-        // Draw the image normally but clipped in circle
-        super.onDraw(canvas)
 
-        // Optional: draw a circular border
-        // paint.style = Paint.Style.STROKE
-        // paint.color = Color.WHITE
-        // paint.strokeWidth = 4f
-        // canvas.drawCircle(cx, cy, radius - 2f, paint)
+        super.onDraw(canvas)
     }
-}
+        }
